@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Safe Comments Feed</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <main class="app">
+      <h1>Safe Comments Feed</h1>
+
+      <form id="commentForm" class="form">
+        <input id="nameInput" placeholder="Name" />
+        <input id="msgInput" placeholder="Message" />
+        <button type="submit">Post</button>
+      </form>
+
+      <div class="controls">
+        <button id="sortLikesBtn">Sort by Likes</button>
+        <button id="clearBtn">Clear All</button>
+      </div>
+
+      <ul id="commentList" class="list"></ul>
+
+      <footer id="stats"></footer>
+
+      <template id="commentTemplate">
+        <li class="comment">
+          <div class="top">
+            <span class="comment__name"></span>
+            <span class="comment__likes"></span>
+          </div>
+          <p class="comment__msg"></p>
+          <div class="actions">
+            <button class="like">Like</button>
+            <button class="delete">Delete</button>
+          </div>
+        </li>
+      </template>
+    </main>
+
+    <script src="index.js"></script>
+  </body>
+</html>
