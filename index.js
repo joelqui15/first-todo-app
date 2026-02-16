@@ -18,13 +18,35 @@ function buildCommentElement(comment) {
     .cloneNode(true);
   const commentName = commentTemplate.querySelector(".comment__name");
   const commentMsg = commentTemplate.querySelector(".comment__msg");
+  const commentLikes = commentTemplate.querySelector(".comment__likes");
+
   const likeBtn = commentTemplate.querySelector(".like");
   const deleteBtn = commentTemplate.querySelector(".delete");
   commentName.textContent = comment.name;
   commentMsg.textContent = comment.msg;
-  likeBtn.addEventListener("click", () => {});
+  commentLikes.textContent = String(comment.likes);
 
-  deleteBtn.addEventListener("click", () => {});
+  if (comment.liked) {
+    likeBtn.classList.add("liked");
+  }
+
+  likeBtn.addEventListener("click", () => {
+    comment.liked === !comment.liked;
+
+    if (comment.liked) {
+      comment.likes += 1;
+      likeBtn.classList.add("liked");
+    } else {
+      comment.likes -= 1;
+      likeBtn.classList.remove("liked");
+    }
+  });
+
+  deleteBtn.addEventListener("click", () => {
+    comments = comments.filter((c) => c.id !== comment.id);
+    commentTemplate.remove();
+    updateStats();
+  });
 
   return commentTemplate;
 }
