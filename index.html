@@ -2,43 +2,77 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Safe Comments Feed</title>
-    <link rel="stylesheet" href="index.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
-    <main class="app">
-      <h1>Safe Comments Feed</h1>
+    <div class="app">
+      <header class="header">
+        <div class="header__filter-btns">
+          <button type="button" class="task__filter-btn">All</button>
+          <button type="button" class="task__filter-btn">Active</button>
+          <button type="button" class="task__filter-btn">Completed</button>
+        </div>
 
-      <form id="commentForm" class="form">
-        <input id="nameInput" placeholder="Name" />
-        <input id="msgInput" placeholder="Message" />
-        <button type="submit">Post</button>
+        <h1 class="header__task-title">Task Manager</h1>
+        <div class="header__task-btns">
+          <button class="header__add-btn">ADD</button>
+        </div>
+      </header>
+
+      <main>
+        <section class="task__container">
+          <div class="task__container-header">
+            <h2 class="filter__status">ALL</h2>
+            <p class="task__counter">0 of 5</p>
+          </div>
+          <ul class="tasks"></ul>
+          <template id="task__template">
+            <li class="task">
+              <input
+                name="checkbox"
+                type="checkbox"
+                class="task__complete-btn"
+              />
+              <div class="task__info-container">
+                <h2 class="task__info-title">TASK TITLE</h2>
+                <p class="task__description">task description</p>
+              </div>
+              <div class="task__actions-container">
+                <p class="task__due-date">DUE</p>
+                <button class="task__delete-btn">DELETE</button>
+              </div>
+            </li>
+          </template>
+        </section>
+      </main>
+
+      <footer class="footer"></footer>
+
+      <!-- <div class="modal modal_hidden">
+      <form class="modal__container">
+        <button type="button" class="modal__close-btn"></button>
+        <input
+          name="title"
+          type="text"
+          placeholder="Add title"
+          class="modal__input-title"
+        />
+        <span class="error__message"></span>
+        <input
+          name="description"
+          type="text"
+          placeholder="Add description"
+          class="modal__input-description"
+        />
+        <span class="error__message"></span>
+        <button type="submit" class="modal__save-btn"></button>
+        <button type="button" class="modal__close-btn"></button>
       </form>
+    </div> -->
 
-      <div class="controls">
-        <button id="sortLikesBtn">Sort by Likes</button>
-        <button id="clearBtn">Clear All</button>
-      </div>
-
-      <ul id="commentList" class="list"></ul>
-
-      <footer id="stats"></footer>
-
-      <template id="commentTemplate">
-        <li class="comment">
-          <div class="top">
-            <span class="comment__name"></span>
-            <span class="comment__likes"></span>
-          </div>
-          <p class="comment__msg"></p>
-          <div class="actions">
-            <button class="like">Like</button>
-            <button class="delete">Delete</button>
-          </div>
-        </li>
-      </template>
-    </main>
-
-    <script src="index.js"></script>
+      <script src="./index.js"></script>
+    </div>
   </body>
 </html>
