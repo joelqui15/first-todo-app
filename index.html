@@ -10,15 +10,20 @@
     <div class="app">
       <header class="header">
         <div class="header__filter-btns">
-          <button type="button" class="task__filter-btn">All</button>
-          <button type="button" class="task__filter-btn">Active</button>
-          <button type="button" class="task__filter-btn">Completed</button>
+          <button type="button" id="FilterAll" class="task__filter-btn">
+            All
+          </button>
+          <button type="button" id="FilterActive" class="task__filter-btn">
+            Active
+          </button>
+          <button type="button" id="FilterCompleted" class="task__filter-btn">
+            Completed
+          </button>
         </div>
 
         <h1 class="header__task-title">Task Manager</h1>
-        <div class="header__task-btns">
-          <button class="header__add-btn">ADD</button>
-        </div>
+
+        <button type="button" class="header__add-btn">ADD</button>
       </header>
 
       <main>
@@ -27,27 +32,27 @@
             <h3 class="filter__status">ALL</h3>
             <p class="task__counter">0 of 5</p>
           </div>
-          <!--<ul class="tasks"></ul>
-          <template id="task__template">-->
-          <li class="task">
-            <div class="task__info-container">
-              <input
-                name="checkbox"
-                type="checkbox"
-                class="task__complete-btn"
-              />
-              <div>
-                <h2 class="task__info-title">TASK TITLE</h2>
-                <p class="task__description">task description</p>
+          <ul class="tasks"></ul>
+          <template id="task__template">
+            <li class="task">
+              <div class="task__info-container">
+                <input
+                  name="checkbox"
+                  type="checkbox"
+                  class="task__complete-btn"
+                />
+                <div>
+                  <h2 class="task__title">TASK TITLE</h2>
+                  <p class="task__description">task description</p>
+                </div>
               </div>
-            </div>
 
-            <div class="task__actions-container">
-              <p class="task__due-date">DUE</p>
-              <button class="task__delete-btn">DELETE</button>
-            </div>
-          </li>
-          <!--</template>-->
+              <div class="task__actions-container">
+                <p class="task__due-date">DUE</p>
+                <button class="task__delete-btn">DELETE</button>
+              </div>
+            </li>
+          </template>
         </section>
       </main>
 
@@ -77,13 +82,21 @@
               id="modal_description"
             />
             <span class="error__message"></span>
-            <div class="modal__due-date"></div>
+          </label>
+          <label for="modal_due-date" class="modal__label-date">
+            DUE
+            <input
+              name="date"
+              type="date"
+              class="modal__input-date"
+              id="modal_due-date"
+            />
+            <span class="error__message"></span>
           </label>
           <button type="submit" class="modal__save-btn">SAVE</button>
         </form>
       </div>
-
-      <script src="./index.js"></script>
     </div>
+    <script src="./index.js"></script>
   </body>
 </html>
