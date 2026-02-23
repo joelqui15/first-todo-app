@@ -23,7 +23,7 @@
 
         <h1 class="header__task-title">Task Manager</h1>
 
-        <button type="button" class="header__add-btn">ADD</button>
+        <button type="submit" class="header__add-btn">ADD</button>
       </header>
 
       <main>
@@ -59,8 +59,10 @@
       <footer class="footer"></footer>
 
       <div class="modal modal_hidden">
-        <form class="modal__container">
-          <button type="button" class="modal__close-btn">X</button>
+        <form name="form1" class="modal__container">
+          <button type="button" name="closeBtn" class="modal__close-btn">
+            X
+          </button>
           <label for="modal_title" class="modal__label">
             Add Task
             <input
@@ -69,18 +71,19 @@
               placeholder="Add title"
               class="modal__input-title"
               id="modal_title"
+              minlength="2"
+              required
             />
             <span class="error__message"></span>
           </label>
           <label for="modal_description" class="modal__label">
             Add Description
-            <input
+            <textarea
               name="description"
-              type="text"
-              placeholder="Add description"
-              class="modal__input-description"
-              id="modal_description"
-            />
+              id="task__description"
+              minlength="2"
+              maxlength="150"
+            ></textarea>
             <span class="error__message"></span>
           </label>
           <label for="modal_due-date" class="modal__label-date">
