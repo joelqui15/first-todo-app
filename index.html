@@ -23,54 +23,65 @@
 
       <main>
         <section class="task__container">
-          <div class="task__container-header">
-            <h2 class="filter__status">ALL</h2>
+          <div class="task__container-counter">
+            <h3 class="filter__status">ALL</h3>
             <p class="task__counter">0 of 5</p>
           </div>
-          <ul class="tasks"></ul>
-          <template id="task__template">
-            <li class="task">
+          <!--<ul class="tasks"></ul>
+          <template id="task__template">-->
+          <li class="task">
+            <div class="task__info-container">
               <input
                 name="checkbox"
                 type="checkbox"
                 class="task__complete-btn"
               />
-              <div class="task__info-container">
+              <div>
                 <h2 class="task__info-title">TASK TITLE</h2>
                 <p class="task__description">task description</p>
               </div>
-              <div class="task__actions-container">
-                <p class="task__due-date">DUE</p>
-                <button class="task__delete-btn">DELETE</button>
-              </div>
-            </li>
-          </template>
+            </div>
+
+            <div class="task__actions-container">
+              <p class="task__due-date">DUE</p>
+              <button class="task__delete-btn">DELETE</button>
+            </div>
+          </li>
+          <!--</template>-->
         </section>
       </main>
 
       <footer class="footer"></footer>
 
-      <!-- <div class="modal modal_hidden">
-      <form class="modal__container">
-        <button type="button" class="modal__close-btn"></button>
-        <input
-          name="title"
-          type="text"
-          placeholder="Add title"
-          class="modal__input-title"
-        />
-        <span class="error__message"></span>
-        <input
-          name="description"
-          type="text"
-          placeholder="Add description"
-          class="modal__input-description"
-        />
-        <span class="error__message"></span>
-        <button type="submit" class="modal__save-btn"></button>
-        <button type="button" class="modal__close-btn"></button>
-      </form>
-    </div> -->
+      <div class="modal modal_hidden">
+        <form class="modal__container">
+          <button type="button" class="modal__close-btn">X</button>
+          <label for="modal_title" class="modal__label">
+            Add Task
+            <input
+              name="title"
+              type="text"
+              placeholder="Add title"
+              class="modal__input-title"
+              id="modal_title"
+            />
+            <span class="error__message"></span>
+          </label>
+          <label for="modal_description" class="modal__label">
+            Add Description
+            <input
+              name="description"
+              type="text"
+              placeholder="Add description"
+              class="modal__input-description"
+              id="modal_description"
+            />
+            <span class="error__message"></span>
+            <div class="modal__due-date"></div>
+          </label>
+          <button type="submit" class="modal__save-btn">SAVE</button>
+        </form>
+      </div>
 
       <script src="./index.js"></script>
     </div>
